@@ -1,0 +1,46 @@
+# {{ project_name }}
+
+{{ description }}
+
+## Requirements
+
+- Python 3.14
+- [uv](https://docs.astral.sh/uv/)
+
+## Setup
+
+```bash
+uv sync
+uv run pre-commit install
+```
+
+## Run
+
+```bash
+uv run scrapy list
+uv run scrapy crawl quotes -O quotes.jsonl
+```
+
+## Add a spider
+
+```bash
+uv run scrapy genspider <name> <domain>
+```
+
+New spiders land in `src/spiders/`.
+
+## Checks
+
+```bash
+uv run ruff check .
+uv run ruff format .
+uv run pytest
+```
+
+## Template updates
+
+Generated from [scrapy-template](https://github.com/darimanner/scrapy-template). Pull template changes with:
+
+```bash
+uvx copier update
+```
